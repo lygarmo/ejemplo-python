@@ -1,0 +1,19 @@
+# Esta función cuenta hasta el número ingresado por el usuario
+def contar_hasta(numero):
+    """Cuenta desde 1 hasta el número proporcionado."""
+    for i in range(1, numero + 1):
+        print(i)  # Imprime el número actual
+
+# Función principal que ejecuta el programa
+def main():
+    # Pedimos al usuario que ingrese un número
+    numero = int(input("Ingresa un número para contar hasta él: "))
+    
+    # Llamamos a la función para contar
+    contar_hasta(numero)
+
+# Ejecutamos el programa solo si este archivo es el principal
+if __name__ == "__main__":
+    main()
+
+input("Presiona Enter para salir...")

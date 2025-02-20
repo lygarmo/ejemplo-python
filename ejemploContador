@@ -1,7 +1,13 @@
 # Esta función cuenta hasta el número ingresado por el usuario
-def contar_hasta(numero):
-    """Cuenta desde 1 hasta el número proporcionado."""
-    for i in range(1, numero + 1):
+def contar_hasta(numero, paso=1):
+    """Cuenta desde 1 hasta el número proporcionado, con un paso especificado."""
+    for i in range(1, numero + 1, paso):
+        print(i)  # Imprime el número actual
+
+# Esta función cuenta de manera regresiva desde el número ingresado hasta 1
+def contar_regresivamente(numero, paso=1):
+    """Cuenta de manera regresiva desde el número proporcionado hasta 1, con un paso especificado."""
+    for i in range(numero, 0, -paso):
         print(i)  # Imprime el número actual
 
 # Función principal que ejecuta el programa
@@ -9,11 +15,23 @@ def main():
     # Pedimos al usuario que ingrese un número
     numero = int(input("Ingresa un número para contar hasta él: "))
     
-    # Llamamos a la función para contar
-    contar_hasta(numero)
+    # Pedimos al usuario que elija si quiere contar hacia arriba o hacia abajo
+    direccion = input("¿Quieres contar hacia arriba (U) o hacia abajo (D)? ").strip().upper()
+    
+    # Pedimos al usuario que ingrese el paso
+    paso = int(input("¿Con qué rango quieres contar? (1 en 1)(2 en 2)..."))
+
+    # Llamamos a la función adecuada según la elección del usuario
+    if direccion == "U":
+        contar_hasta(numero, paso)
+    elif direccion == "D":
+        contar_regresivamente(numero, paso)
+    else:
+        print("Opción inválida. Por favor, elige 'U' para arriba o 'D' para abajo.")
 
 # Ejecutamos el programa solo si este archivo es el principal
 if __name__ == "__main__":
     main()
 
+# Esperamos que el usuario presione Enter para salir del programa
 input("Presiona Enter para salir...")

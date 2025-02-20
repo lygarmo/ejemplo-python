@@ -1,7 +1,19 @@
 # Programa que calcula la suma de los primeros N números enteros.
 
-# Se pide al usuario que ingrese un número N
-n = int(input("Introduce un número entero N: "))
+# Función para validar que la entrada sea un número entero positivo
+def obtener_numero():
+    while True:
+        try:
+            n = int(input("Introduce un número entero N: "))
+            if n <= 0:
+                print("Por favor, ingresa un número entero positivo.")
+            else:
+                return n
+        except ValueError:
+            print("Entrada no válida. Por favor, ingresa un número entero.")
+
+# Llamar a la función para obtener un número válido
+n = obtener_numero()
 
 # Inicializamos la variable suma en 0
 suma = 0

@@ -1,0 +1,77 @@
+# Función para convertir de Celsius a Fahrenheit
+def celsius_a_fahrenheit(celsius):
+    """Convierte la temperatura de Celsius a Fahrenheit."""
+    return (celsius * 9/5) + 32
+
+# Función para convertir de Celsius a Kelvin
+def celsius_a_kelvin(celsius):
+    """Convierte la temperatura de Celsius a Kelvin."""
+    return celsius + 273.15
+
+# Función para convertir de Fahrenheit a Celsius
+def fahrenheit_a_celsius(fahrenheit):
+    """Convierte la temperatura de Fahrenheit a Celsius."""
+    return (fahrenheit - 32) * 5/9
+
+# Función para convertir de Fahrenheit a Kelvin
+def fahrenheit_a_kelvin(fahrenheit):
+    """Convierte la temperatura de Fahrenheit a Kelvin."""
+    celsius = fahrenheit_a_celsius(fahrenheit)  # Primero convertimos a Celsius
+    return celsius_a_kelvin(celsius)  # Luego convertimos a Kelvin
+
+# Función para convertir de Kelvin a Celsius
+def kelvin_a_celsius(kelvin):
+    """Convierte la temperatura de Kelvin a Celsius."""
+    return kelvin - 273.15
+
+# Función para convertir de Kelvin a Fahrenheit
+def kelvin_a_fahrenheit(kelvin):
+    """Convierte la temperatura de Kelvin a Fahrenheit."""
+    celsius = kelvin_a_celsius(kelvin)  # Primero convertimos a Celsius
+    return celsius_a_fahrenheit(celsius)  # Luego convertimos a Fahrenheit
+
+# Función principal que ejecuta el programa
+def main():
+    print("Conversor de Temperaturas")
+    print("1. Celsius a Fahrenheit")
+    print("2. Celsius a Kelvin")
+    print("3. Fahrenheit a Celsius")
+    print("4. Fahrenheit a Kelvin")
+    print("5. Kelvin a Celsius")
+    print("6. Kelvin a Fahrenheit")
+
+    # Pedimos al usuario que elija una opción
+    opcion = int(input("Selecciona una opción (1-6): "))
+    
+    # Pedimos al usuario que ingrese la temperatura
+    temperatura = float(input("Ingresa la temperatura a convertir: "))
+    
+    # Realizamos la conversión según la opción seleccionada
+    if opcion == 1:
+        resultado = celsius_a_fahrenheit(temperatura)
+        print(f"{temperatura}°C = {resultado}°F")
+    elif opcion == 2:
+        resultado = celsius_a_kelvin(temperatura)
+        print(f"{temperatura}°C = {resultado}K")
+    elif opcion == 3:
+        resultado = fahrenheit_a_celsius(temperatura)
+        print(f"{temperatura}°F = {resultado}°C")
+    elif opcion == 4:
+        resultado = fahrenheit_a_kelvin(temperatura)
+        print(f"{temperatura}°F = {resultado}K")
+    elif opcion == 5:
+        resultado = kelvin_a_celsius(temperatura)
+        print(f"{temperatura}K = {resultado}°C")
+    elif opcion == 6:
+        resultado = kelvin_a_fahrenheit(temperatura)
+        print(f"{temperatura}K = {resultado}°F")
+    else:
+        print("Opción inválida. Por favor, elige un número entre 1 y 6.")
+
+# Ejecutamos el programa solo si este archivo es el principal
+if __name__ == "__main__":
+    main()
+
+
+# Añadimos esta línea para esperar que el usuario presione Enter antes de cerrar
+input("Presiona Enter para salir...")

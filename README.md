@@ -12,7 +12,7 @@ Este repositorio contiene varios proyectos sencillos en Python diseñados para p
 2. **Adivina el Número**
    - Un juego en el que el usuario debe adivinar un número aleatorio entre 1 y 100.
    - El programa le dará pistas sobre si el número es más alto o más bajo que el número seleccionado aleatoriamente.
-   - [Ver código](adivinarNumero.py)
+   - [Ver código](https://github.com/lygarmo/ejemplo-python/adivinarNumero.py)
 
 3. **Conversor de Temperaturas**
    - Un programa que convierte temperaturas entre grados Celsius, Fahrenheit y Kelvin.
